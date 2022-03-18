@@ -11,6 +11,9 @@ function TodoList() {
         setTodos(state => [...state, todoInput])
         setTodoInput('')
     }
+    const clear = () => {
+        setTodos([])
+    }
     return ( 
         <div>
             <h1>Todo App</h1>
@@ -29,6 +32,10 @@ function TodoList() {
                         <p>{todo}</p>                        
                     ))
                 }
+            </div>
+            <div>
+                <b> Total: {todos.length}</b> <br/>
+                <button onClick={clear}>Clear all</button>
             </div>
         </div>
      );
